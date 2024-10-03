@@ -8,8 +8,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Template to create ReactJs components for us with Outsystems",
   "dependencies": {
+    "@arcgis/core": "^4.30.9",
+    "@arcgis/map-components-react": "^4.30.7",
+    "@esri/calcite-components-react": "^2.13.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-select": "^5.8.1"

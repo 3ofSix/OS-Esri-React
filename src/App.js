@@ -2,22 +2,28 @@
 // This is an example
 
 import React from 'react';
-import SelectWrapper from './components/SelectWrapper';
+// Individual imports for each component used in this sample
 
-const options = [
-    {value: 'option1', label: 'Option 1'},
-    {value: 'option2', label: 'Option 2'},
-];
+import { ArcgisMap, ArcgisSearch, ArcgisLegend } from "@arcgis/map-components-react";
+// import defineCustomElements to register custom elements with the custom elements registry
+import { defineCustomElements as defineMapElements } from "@arcgis/map-components/dist/loader";
+
+defineMapElements(window, { resourcesUrl: "https://js.arcgis.com/map-components/4.30/assets" });
 
 const App = () => {
-    const handleSelectChange = (selectedOption) => {
-        console.log('Selected option:', selectedOption);
-    };
-
+    
     return (
         <div>
-            <h1>React Select Wrapper Example</h1>
-            <SelectWrapper options={options} onChange={handleSelectChange} />
+            <h1>ArcGis Map example</h1>
+            <ArcgisMap 
+            itemId="d5dda743788a4b0688fe48f43ae7beb9"
+            onArcgisViewReadyChange={(event) => {
+                console.log("MapView ready", event);
+            }}
+            >
+                <ArcgisSearch position="top-right"></ArcgisSearch>
+                <ArcgisLegend position="bottom-left"></ArcgisLegend>
+            </ArcgisMap>
         </div>
     );
 };

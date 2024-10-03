@@ -7,6 +7,13 @@ This is used to test locally. Then wrap the required scripts into a bindel to be
 NodeJS
 NPM
 Offline React and ReactDOM
+Get react from the CDN https://unpkg.com/react@18.3.1/umd/react.production.min.js
+Get ReactDOM from it's CDN https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js
+
+In Powershell grab the content like in this example
+mkdir OfflineReactScripts
+Invoke-WebRequest -Uri "https://unpkg.com/react@18.3.1/umd/react.production.min.js" | select -ExpandProperty Content | Out-File OfflineReactScripts/react.production.js
+Invoke-WebRequest -Uri "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" | select -ExpandProperty Content | Out-File OfflineReactScripts/react-dom.production.js
 # Set up
 If the project is not initialised run 
     `npn init -y`
